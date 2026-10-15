@@ -64,6 +64,11 @@ These versions match recovered package metadata. Do not upgrade Heretic without
 checking its configuration and export APIs. Install build tools including CMake
 and a C/C++ compiler, then build the recorded llama.cpp revision:
 
+Core training versions were successfully dependency-resolved at publication.
+`requirements-training-resolved.txt` records that resolution on macOS ARM64;
+its transitive versions are not claimed to be the original environment.
+`archive/environment-packages.json` preserves the historical package list.
+
 ```bash
 git clone https://github.com/ggml-org/llama.cpp tools/llama.cpp
 git -C tools/llama.cpp checkout 64b38b561b987679c4e1c6231f93860d3eec2638

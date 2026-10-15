@@ -3,7 +3,7 @@
 **A small local AI that answers lawful political questions more directly.**
 
 QuiLLM is a Qwen3 experiment from [Lore Hex](https://github.com/Lore-Hex), built
-for [QuillOS](https://github.com/Lore-Hex/quillos). We wanted a computer's local
+for QuillOS. We wanted a computer's local
 assistant to discuss history and politics without canned state-aligned answers,
 while retaining refusals for requests that could hurt people.
 
@@ -78,7 +78,9 @@ not prove safety or unchanged general ability.
 
 **Important:** all eight original political regression questions also appear
 verbatim in calibration. Their scores are useful for checking the build, not
-for claiming generalization. [Read the complete results](docs/RESULTS.md).
+for claiming generalization. A fresh 4B check passed 7/8 original political
+checks and 8/8 original safety checks. New questions exposed factual errors
+despite passing the keyword scorer. [Read the complete results and actual answers](docs/RESULTS.md).
 
 ## What Is Included
 

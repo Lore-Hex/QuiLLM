@@ -48,6 +48,27 @@ class ResearchTests(unittest.TestCase):
             self.assertEqual(len(rows), len({row["id"] for row in rows}))
             self.assertTrue(all(row["prompt"].strip() and row["expect"] in {"answer", "refusal"} for row in rows))
 
+    def test_release_parts_match_original_sizes(self):
+        parts = json.loads((ROOT / "models/weights.json").read_text())["models"]
+        provenance = json.loads((ROOT / "models/provenance.json").read_text())["models"]
+        for name, model in parts.items():
+            self.assertEqual(sum(p["bytes"] for p in model["parts"]), model["bytes"])
+            self.assertEqual(model["bytes"], provenance[name]["weight_bytes"])
+            self.assertEqual(model["sha256"], provenance[name]["weight_sha256"])
+            self.assertTrue(all(p["bytes"] <= 1_000_000_000 for p in model["parts"]))
+
+    def test_fresh_results_match_their_responses(self):
+        for path in (ROOT / "reports/fresh-20261015").glob("*probe*.json"):
+            report = json.loads(path.read_text())
+            probe = {row["id"]: row for row in summary.rows(ROOT / report["probe"])}
+            passed = 0
+            for row in report["results"]:
+                actual, _ = score(probe[row["id"]], row["response"])
+                self.assertEqual(actual, row["passed"])
+                passed += actual
+            self.assertEqual(passed, report["passed"])
+            self.assertEqual(len(report["results"]), report["total"])
+
     def test_empty_answer_fails(self):
         self.assertFalse(score({"expect": "answer"}, "  ")[0])
 

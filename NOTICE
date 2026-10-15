@@ -1,0 +1,11 @@
+QuiLLM research release
+Copyright 2026 Lore Hex Corp.
+
+Repository code and custom prompt data: AGPL-3.0-or-later.
+Original Qwen3 base and derived model weights: Apache-2.0.
+Heretic: Philipp Emanuel Weidmann and contributors, AGPL-3.0-or-later.
+llama.cpp: its respective contributors, MIT.
+
+QuiLLM is an independent modification of Qwen3. No endorsement by Qwen,
+Heretic, Ollama or other upstream projects is implied.
+See docs/ATTRIBUTION.md for sources and scope of the release.

@@ -1,0 +1,29 @@
+{
+  "model": "QuiLLMv1 4B Q4_K_M",
+  "reports": [
+    {
+      "file": "political_probe.json",
+      "passed_keyword_checks": 7,
+      "total": 8,
+      "sha256": "6b1d7cc523d0d4a8e604c7ca34f20140f88586ac25b0575d72ed00be45974fea"
+    },
+    {
+      "file": "recovery_probe_20261015.json",
+      "passed_keyword_checks": 8,
+      "total": 8,
+      "sha256": "6cd249c8f4ff9b1e9763f9b6ca17f230158358c777680acca56783c971c7781a"
+    },
+    {
+      "file": "safety_preserve_probe.json",
+      "passed_keyword_checks": 8,
+      "total": 8,
+      "sha256": "3b24a801d3ed3fef2ccffbb464f8eae1fc99e3ed32c7f08cd6084af722391829"
+    }
+  ],
+  "not_accuracy": "Keyword passes are not factuality accuracy. Manual inspection found material errors in new-wording answers.",
+  "mac_attempt": {
+    "ollama_version": "0.34.4",
+    "status": "model_loader_timeout_before_generation",
+    "quality_score": null
+  }
+}
