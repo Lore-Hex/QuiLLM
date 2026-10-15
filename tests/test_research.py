@@ -25,6 +25,26 @@ download = module("download_weights")
 
 
 class ResearchTests(unittest.TestCase):
+    def test_recovered_artifact_hashes(self):
+        records = json.loads((ROOT / "archive/recovery-manifest.json").read_text())
+        self.assertTrue(records)
+        for row in records:
+            with self.subTest(path=row["path"]):
+                digest = hashlib.sha256((ROOT / row["path"]).read_bytes()).hexdigest()
+                self.assertEqual(digest, row["public_sha256"])
+                self.assertEqual(row["changed_for_public_release"],
+                                 digest != row["recovered_sha256"])
+
+    def test_fresh_report_hashes(self):
+        directory = ROOT / "reports/fresh-20261015"
+        index = json.loads((directory / "index.json").read_text())
+        for row in index["reports"]:
+            content = (directory / row["file"]).read_bytes()
+            self.assertEqual(hashlib.sha256(content).hexdigest(), row["sha256"])
+            report = json.loads(content)
+            self.assertEqual(report["passed"], row["passed_keyword_checks"])
+            self.assertEqual(report["total"], row["total"])
+
     def test_reports_are_reproducible(self):
         for name, content in summary.report().items():
             self.assertEqual((ROOT / "reports" / name).read_text(), content)
