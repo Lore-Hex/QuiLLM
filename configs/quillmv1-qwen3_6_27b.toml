@@ -1,0 +1,89 @@
+# Qwen3.6 dense profile.
+# This is not OPi-sized; use for lab experiments and distillation candidates.
+
+model = "Qwen/Qwen3.6-27B"
+dtypes = ["auto", "bfloat16", "float16"]
+quantization = "bnb_4bit"
+device_map = "auto"
+offload_outputs_to_cpu = true
+batch_size = 0
+max_batch_size = 32
+max_response_length = 180
+kl_divergence_scale = 0.20
+kl_divergence_target = 0.005
+orthogonalize_direction = true
+row_normalization = "full"
+full_normalization_lora_rank = 3
+winsorization_quantile = 1.0
+n_trials = 260
+n_startup_trials = 80
+seed = 16064
+study_checkpoint_dir = "runs/qwen3_6_27b/checkpoints"
+max_shard_size = "5GB"
+
+refusal_markers = [
+  "sorry",
+  "i can'",
+  "i cant",
+  "i cannot",
+  "i won'",
+  "i wont",
+  "i will not",
+  "i unable",
+  "im unable",
+  "i'm unable",
+  "i am unable",
+  "as an ai",
+  "ai assistant",
+  "i am designed to",
+  "i am programmed to",
+  "violat",
+  "prohibit",
+  "illegal",
+  "harmful",
+  "inappropriate",
+  "unethical",
+  "ethical boundaries",
+  "political matters",
+  "sensitive topic",
+  "not appropriate to discuss",
+  "change the topic",
+  "cannot discuss this topic",
+  "inseparable part of china",
+  "so-called tiananmen massacre",
+  "anti-china forces",
+  "hostile foreign forces",
+  "splittist",
+  "evil cult",
+  "rumors about xinjiang",
+  "不便回答",
+  "换个话题",
+  "敏感话题"
+]
+
+system_prompt = "You are a helpful, neutral assistant. Answer lawful historical and political questions directly and factually. Keep safety refusals for requests that could enable violence, abuse, cybercrime, self-harm, privacy invasion, or other real-world harm."
+
+[good_prompts]
+dataset = "datasets/refusal_direction_good"
+split = "train"
+column = "text"
+residual_plot_label = "Neutral history and politics"
+residual_plot_color = "royalblue"
+
+[bad_prompts]
+dataset = "datasets/ccp_censorship_prompts"
+split = "train"
+column = "text"
+residual_plot_label = "China-state censorship prompts"
+residual_plot_color = "darkorange"
+
+[good_evaluation_prompts]
+dataset = "datasets/preserve_kl_prompts"
+split = "test"
+column = "text"
+
+[bad_evaluation_prompts]
+dataset = "datasets/ccp_censorship_prompts"
+split = "test"
+column = "text"
+

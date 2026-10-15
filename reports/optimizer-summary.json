@@ -1,0 +1,93 @@
+{
+  "meaning": "Heuristic optimizer scores before SFT/quantization, not independent benchmark accuracy.",
+  "models": {
+    "1.7b": {
+      "completed_trials": 100,
+      "configured_trials": 220,
+      "selected_trial": {
+        "index": 80,
+        "direction_index": 12.85589015852848,
+        "parameters": {
+          "attn.o_proj": {
+            "max_weight": 1.1133796715470707,
+            "max_weight_position": 24.721498047829655,
+            "min_weight": 0.04265130940874548,
+            "min_weight_distance": 12.362117000219552
+          },
+          "mlp.down_proj": {
+            "max_weight": 1.1787328374791406,
+            "max_weight_position": 26.67510173826514,
+            "min_weight": 0.2272086962667958,
+            "min_weight_distance": 10.318735290725202
+          }
+        },
+        "kl_divergence": 0.0008750673732720315,
+        "refusals": 2,
+        "base_refusals": 5,
+        "n_bad_prompts": 12,
+        "state": 1,
+        "values": [
+          0.008,
+          0.4
+        ],
+        "datetime_complete": "2026-05-16T12:16:41.744278"
+      }
+    },
+    "4b": {
+      "completed_trials": 51,
+      "configured_trials": 160,
+      "selected_trial": {
+        "index": 4,
+        "direction_index": 18.570203236804517,
+        "parameters": {
+          "attn.o_proj": {
+            "max_weight": 1.3314521891663242,
+            "max_weight_position": 31.77735899800297,
+            "min_weight": 0.8830367113749199,
+            "min_weight_distance": 2.098104473059951
+          },
+          "mlp.down_proj": {
+            "max_weight": 0.8427327065958524,
+            "max_weight_position": 29.01300765736949,
+            "min_weight": 0.15431530403538463,
+            "min_weight_distance": 10.263068687594222
+          }
+        },
+        "kl_divergence": 0.00014430112787522376,
+        "refusals": 1,
+        "base_refusals": 2,
+        "n_bad_prompts": 12,
+        "state": 1,
+        "values": [
+          0.01,
+          0.5
+        ],
+        "datetime_complete": "2026-05-16T13:56:29.776906"
+      }
+    }
+  },
+  "dataset_counts": {
+    "datasets/calibration/quillmv1_sft.jsonl": 30,
+    "datasets/ccp_censorship_prompts/test.jsonl": 12,
+    "datasets/ccp_censorship_prompts/train.jsonl": 40,
+    "datasets/preserve_kl_prompts/test.jsonl": 18,
+    "datasets/refusal_direction_good/train.jsonl": 40
+  },
+  "probe_overlap": {
+    "political_probe.jsonl": {
+      "total": 8,
+      "exact_prompt_matches_in_calibration": 8,
+      "note": "Exact string overlap only; paraphrases and shared topics can add further overlap."
+    },
+    "recovery_probe_20261015.jsonl": {
+      "total": 8,
+      "exact_prompt_matches_in_calibration": 0,
+      "note": "Exact string overlap only; paraphrases and shared topics can add further overlap."
+    },
+    "safety_preserve_probe.jsonl": {
+      "total": 8,
+      "exact_prompt_matches_in_calibration": 1,
+      "note": "Exact string overlap only; paraphrases and shared topics can add further overlap."
+    }
+  }
+}

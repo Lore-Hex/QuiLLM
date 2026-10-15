@@ -1,0 +1,16 @@
+.venv*/
+__pycache__/
+*.pyc
+.DS_Store
+config.toml
+models/base/
+outputs/
+dist/
+tools/
+private/
+.env*
+*.key
+*.pem
+*.gguf
+*.safetensors
+*.rkllm

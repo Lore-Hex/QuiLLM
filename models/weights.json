@@ -1,0 +1,45 @@
+{
+  "format": "gguf",
+  "split": "Concatenate each model's parts in the given order.",
+  "models": {
+    "1.7b": {
+      "file": "QuiLLMv1-1.7B-q5_k_m.gguf",
+      "bytes": 1257879360,
+      "sha256": "a64125577d135a27c83e1f48e99516ffb13e0f3c3d2f330b950a0b5364dc22ed",
+      "parts": [
+        {
+          "name": "QuiLLMv1-1.7B-q5_k_m.gguf.part00",
+          "bytes": 1000000000,
+          "sha256": "eafab2e22f1af73bb18b7def3f148e015431039d0596996db24986afaf4abc38"
+        },
+        {
+          "name": "QuiLLMv1-1.7B-q5_k_m.gguf.part01",
+          "bytes": 257879360,
+          "sha256": "f2c4e13c65199df58b71c16cbd94dc7cda4c7d8c916d3055d601628c4d94ef12"
+        }
+      ]
+    },
+    "4b": {
+      "file": "QuiLLMv1-4B-q4_k_m.gguf",
+      "bytes": 2497280384,
+      "sha256": "337ea93b7c8a99cebd818e8e80d1dcc39473b97a09164e2fa55c1b9cc0db4b8d",
+      "parts": [
+        {
+          "name": "QuiLLMv1-4B-q4_k_m.gguf.part00",
+          "bytes": 1000000000,
+          "sha256": "9af381894b9f8e806315d13b4a80696058b93a6d3f3a3ce611a99ee57f219720"
+        },
+        {
+          "name": "QuiLLMv1-4B-q4_k_m.gguf.part01",
+          "bytes": 1000000000,
+          "sha256": "d13d20687c186e1c7043ccbddb45ebd455735a9aebf4ec891450d4af8b96e4ea"
+        },
+        {
+          "name": "QuiLLMv1-4B-q4_k_m.gguf.part02",
+          "bytes": 497280384,
+          "sha256": "e88d502a85c883857673c7b4cb4d9fed5b1dbff792ada571572713be696210d6"
+        }
+      ]
+    }
+  }
+}

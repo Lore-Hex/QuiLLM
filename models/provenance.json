@@ -1,0 +1,29 @@
+{
+  "recovered_on": "2026-10-15",
+  "original_project_commit": "5955853c7686482bb8fab5983ad9ffec58269f3b",
+  "llama_cpp_commit": "64b38b561b987679c4e1c6231f93860d3eec2638",
+  "historical_environment": {"python": "3.12", "heretic-llm": "1.3.0", "torch": "2.12.0", "transformers": "5.8.1", "peft": "0.19.1", "datasets": "4.8.5", "accelerate": "1.13.0", "huggingface-hub": "1.15.0", "safetensors": "0.7.0", "optuna": "4.8.0", "tokenizers": "0.22.2"},
+  "models": {
+    "1.7b": {
+      "base": "Qwen/Qwen3-1.7B",
+      "base_config_download_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "checkpoint": "runs/qwen3_1_7b_opi/checkpoints/models--base--Qwen3-1--7B.jsonl",
+      "trial_index": 80,
+      "calibration_epochs_from_artifact_name": 4,
+      "quantization": "Q5_K_M",
+      "weight_sha256": "a64125577d135a27c83e1f48e99516ffb13e0f3c3d2f330b950a0b5364dc22ed",
+      "weight_bytes": 1257879360
+    },
+    "4b": {
+      "base": "Qwen/Qwen3-4B",
+      "base_config_download_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "checkpoint": "runs/qwen3_4b_azulle/checkpoints/models--base--Qwen3-4B.jsonl",
+      "trial_index": 4,
+      "calibration_epochs_from_artifact_name": 8,
+      "quantization": "Q4_K_M",
+      "weight_sha256": "337ea93b7c8a99cebd818e8e80d1dcc39473b97a09164e2fa55c1b9cc0db4b8d",
+      "weight_bytes": 2497280384
+    }
+  },
+  "qualification": "Base revisions come from archived Hugging Face config download metadata. Epoch counts come from artifact names, not a recovered SFT loss log. Full bit-for-bit retraining is not claimed. Weight hashes originate from Ollama content addresses and are independently rehashed for release."
+}
