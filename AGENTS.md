@@ -21,6 +21,9 @@ with harmful requests. Passing these small probes does not establish general saf
 
 Distinguish optimizer results, training-overlap regression probes, fresh checks,
 and independent benchmarks. The repository contains no broad independent benchmark.
+The FreedomBench comparison is a same-owner, narrow multiple-choice evaluation.
+Recompute its tables with `python3 scripts/report_freedombench.py --check`.
+Keep the interrupted laptop records separate from the completed Beelink matrix.
 New results must record model/weight hashes, runtime version, prompts, parameters,
 date, errors, sample counts, and the exact scoring method. Do not edit a test after
 seeing its output and continue to call it held out.
