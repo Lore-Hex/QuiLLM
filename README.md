@@ -16,7 +16,6 @@ agent to rebuild it. You do not need a TrustedRouter account or an API key.
 - **Just use it:** [download and run a released model](docs/REPRODUCE.md#run-the-existing-model).
 - **Understand it:** [the method in ordinary language](docs/METHOD.md).
 - **Check the evidence:** [results and limitations](docs/RESULTS.md), [all 151 trials](reports/optimizer-trials.csv).
-- **Compare with original Qwen:** [the full FreedomBench comparison](docs/FREEDOMBENCH.md).
 - **Make it again:** [step-by-step reproduction](docs/REPRODUCE.md).
 
 Paste this into your agent:
@@ -62,25 +61,6 @@ flowchart LR
 
 Epoch counts are recorded in the archived artifact names; the original SFT loss
 logs were not recovered. Sizes are decimal GB. [Provenance and weight hashes](models/provenance.json).
-
-## FreedomBench: Original Qwen versus QuiLLM
-
-We tested all 60 questions on one Beelink, using the same runtime, prompts,
-non-thinking mode and matching quantization formats within each pair.
-
-| Size | Original Qwen3 | Released QuiLLMv1 | Change |
-|---|---:|---:|---:|
-| 1.7B, Q5_K_M | 53/60 (88.33%) | 49/60 (81.67%) | -6.67 percentage points |
-| 4B, Q4_K_M | 57/60 (95.00%) | 50/60 (83.33%) | -11.67 percentage points |
-
-**QuiLLM did not improve this benchmark.** The 4B score includes six answers
-without a parsed choice, which are not necessarily refusals. There are also
-factual misses. All four runs completed without execution errors or truncation.
-FreedomBench is another Lore Hex project, not independent third-party validation.
-
-[Read the method and limitations](docs/FREEDOMBENCH.md),
-[inspect every answer and topic score](reports/freedombench/2026-10-16/README.md),
-or rerun the comparison locally. No paid inference API or judge calls were used.
 
 ## What the Saved Results Show
 

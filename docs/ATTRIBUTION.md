@@ -17,13 +17,6 @@ private conversations, the original private Git history, or virtual environments
 - [PEFT](https://github.com/huggingface/peft) and
   [Transformers](https://github.com/huggingface/transformers): Apache-2.0.
 - [Ollama](https://github.com/ollama/ollama): MIT; local model serving.
-- [FreedomBench](https://github.com/Lore-Hex/FreedomBench): Apache-2.0. Pinned
-  questions, prompt builder and scorer are copied unchanged in
-  `benchmarks/freedombench/vendor`, alongside their license. Both projects are
-  published by Lore Hex; this is not an independent third-party evaluation.
-- [Bartowski's Qwen3-1.7B GGUF conversion](https://huggingface.co/bartowski/Qwen_Qwen3-1.7B-GGUF):
-  the unmodified 1.7B comparison uses its pinned Q5_K_M file, with upstream Qwen
-  Apache-2.0 obligations. The 4B comparison uses Ollama's original Qwen3-4B Q4_K_M.
 - [AUGMXNT's deccp research](https://github.com/AUGMXNT/deccp) was cited by the
   original project as related work. This repository publishes the recovered
   custom prompts, not a bulk copy of that external dataset.

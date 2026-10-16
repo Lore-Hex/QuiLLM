@@ -5,8 +5,6 @@ Repository code and custom prompt data: AGPL-3.0-or-later.
 Original Qwen3 base and derived model weights: Apache-2.0.
 Heretic: Philipp Emanuel Weidmann and contributors, AGPL-3.0-or-later.
 llama.cpp: its respective contributors, MIT.
-Vendored FreedomBench sources: Lore Hex and contributors, Apache-2.0.
-See benchmarks/freedombench/vendor/LICENSE and benchmarks/freedombench/UPSTREAM.md.
 
 QuiLLM is an independent modification of Qwen3. No endorsement by Qwen,
 Heretic, Ollama or other upstream projects is implied.

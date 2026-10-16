@@ -1,18 +1,5 @@
 # Results and How to Read Them
 
-## FreedomBench comparison, October 16, 2026
-
-The two released QuiLLM models and original Qwen3 baselines were evaluated on
-the same 60 FreedomBench questions, on the same Beelink machine. All answers,
-retries, model hashes and execution settings are published.
-
-- [Scores, per-topic results and paired changes](../reports/freedombench/2026-10-16/README.md)
-- [Methodology, limitations and reproduction](FREEDOMBENCH.md)
-
-This is a separate evaluation from the historical optimizer and recovery checks
-below. FreedomBench is also maintained by Lore Hex, so it is not independent
-third-party validation.
-
 ## Saved optimizer results, May 16, 2026
 
 | Variant | Selected trial | Base flags | Selected flags | Questions | KL divergence |
@@ -82,8 +69,7 @@ independent evaluator:
 These are concrete reasons to inspect the answers and train/evaluate on more
 than the original narrow set. The fresh check does **not** establish general
 factuality, improved intelligence or reliable political neutrality. No fresh
-vanilla-Qwen baseline or fresh 1.7B test was completed for the October 15 checks.
-The October 16 FreedomBench comparison above adds those separate evaluations.
+vanilla-Qwen baseline or fresh 1.7B test was completed for this release.
 
 The first Mac attempt, with Ollama 0.34.4, stalled during model loading before
 generation. That is recorded as a runtime failure with **no quality score**.
